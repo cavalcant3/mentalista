@@ -1,16 +1,25 @@
 var numeroSecreto = 3
 
-var chute = parseInt(prompt ("Digite um número entre 0 e 10"))
+var chute = parseInt(prompt("Digite um número entre 0 e 10"))
 
-if (numeroSecreto == chute) {
-    alert("Acertou")
+var tentativas = 2
+while (tentativas > 0) {
+    if (numeroSecreto == chute) {
+        alert("Acertou")
+        break   
 
-} else if (chute > numeroSecreto) {
-    console.log("O número secreto é menor")
-}  else if (chute < numeroSecreto) {
-    console.log("O número secreto é maior")
+    } else if (chute > numeroSecreto) {
+        alert("O número secreto é menor")
+         chute = parseInt(prompt("Digite um número entre 0 e 10"))
+        tentativas = tentativas - 1
+
+    } else if (chute < numeroSecreto) {
+       alert("O número secreto é maior")
+       chute = parseInt(prompt("Digite um número entre 0 e 10"))
+       tentativas = tentativas - 1
+    } else if (tentativas = 0) {
+        break
+    }
+
 }
 
-else {
-    alert("Errou. O número secreto era " + numeroSecreto )
-}
